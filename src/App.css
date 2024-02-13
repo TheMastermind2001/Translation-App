@@ -2,12 +2,8 @@
   max-width: 50%;
   margin: 100px auto auto;
   text-align: justify;
-  /* width: 70%; */
 }
 
-.app-text>h1{
-  /* color: blue; */
-}
 
 .translate-button{
   display: block;
@@ -15,28 +11,19 @@
   border-radius: 40px;
   padding: 15px;
   background-color: rgb(75, 152, 239);
-  /* background-color: #f7f8fc; */
   color: aliceblue;
   font-weight: 700;
   font-size: large;
   cursor: pointer;
 }
 
-/* #dropdown-menu{
-  max-height: calc(3 * 2.5rem); /* Adjust based on your item height */
-  /* overflow-y: auto; */
-/* } */
-
 .dropdown-menu{
   max-height: 12rem;
   overflow-y: auto;
 }
 .custom-dropdown{
-  /* padding: 10px auto auto; */
   margin-top: 20px;
   text-align: center;
-  /* max-height: calc(1 rem);  */
-  /* overflow-y: auto; */
 }
 
 .heading{

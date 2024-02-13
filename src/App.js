@@ -4,9 +4,7 @@ import React, { useState } from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react';
-// import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
-// or less ideally
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -19,11 +17,7 @@ function App() {
       body: JSON.stringify({
         "target":"en"
       }),
-      // headers: {
-        // "Content-Type": "application/json",
-      // },
     }).then(result=>{
-      // console.log(result);
       return result.json();
     }).then(data=>{
       setAllLangs(data.data.languages);
@@ -48,46 +42,6 @@ function App() {
       target: lang,
       q: currentText,
     };
-    
-    // axios.post('https://translation.googleapis.com/language/translate/v2', {
-    //   params: queryParams,
-    // })
-    // .then(response => {
-    //   console.log(response.data);
-    //   // setCurrentText(response.data);
-    // })
-    // .catch(error => {
-    //   console.error('Error:', error);
-    // });
-
-    // fetch("https://translation.googleapis.com/language/translate/v2?"+"key=AIzaSyB7qw1f805UDuVUVlyjz3gx0oRFB_OoQtU&target="+lang+"&q="+currentText,{
-    //   method: "POST",
-    // }
-    // ).then(result=>{
-    //   return result.json();
-    // }).then(data=>{
-    //   console.log(data);
-    // }).catch(error=>{
-    //   console.log(error);
-    // })
-
-
-    // const url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}&target=${lang}&q=${currentText}`;
-
-    // fetch(url, {
-    //   method: "POST", // Google's Translation API allows data in the query string for POST
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    // .then(response => response.json())
-    // .then(data => console.log(data))
-    // .catch(error => console.error('Error:', error));
-
-
-
-
-
     axios.post('https://translation.googleapis.com/language/translate/v2', {
       q: currentText,
       target: lang,
@@ -107,49 +61,23 @@ function App() {
         '&amp;': '&',
         '&lt;': '<',
         '&gt;': '>',
-        // Common entities
         '&nbsp;': ' ',
         '&ndash;': '–',
         '&mdash;': '—',
         '&hellip;': '…',
         '&eacute;': 'é',
-        // Add more entities as needed
       };
-      
-      // Function to replace entities with characters
       function replaceEntities(text) {
         const entityRegex = new RegExp(Object.keys(entities).join('|'), 'g');
         return text.replace(entityRegex, (match) => entities[match]);
       }
       
       let txtfinal = replaceEntities(txt);
-      // let txtfinal="";
-      // for(let i=0;i<txt.length;i++){
-      //   if(txt[i]=='&' && (i+1<txt.length && txt[i+1]=='q') && (i+2<txt.length && txt[i+2]=='u') &&
-      //   (i+3<txt.length && txt[i+3]=='o') && (i+4<txt.length && txt[i+4]=='t') && (i+5<txt.length && txt[i+5]==';')){
-      //     txtfinal=txtfinal+s2; 
-      //     i=i+5;continue;
-      //   }
-      //   txtfinal=txtfinal+txt[i];
-      // }
       setCurrentText(txtfinal);
       console.log(lang)
     })
     .catch(error => console.error('Error:', error));
 
-
-
-
-
-
-    // fetch("https://translation.googleapis.com/language/translate/v2?q=My name is Agniva Bhattacharya. I am a student at IIT Kharagpur.&key=AIzaSyB7qw1f805UDuVUVlyjz3gx0oRFB_OoQtU&target=bn",{
-    //   method: "GET",
-    // }
-    // ).then(result=>{
-    //   return result.json();
-    // }).then(data=>{
-    //   console.log(data);
-    // })
     
   }
 
@@ -167,25 +95,8 @@ function App() {
               handleClick(langdata.language);
             }}>{langdata.name}</Dropdown.Item>);
           })}
-          
-          {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-           */}
         </DropdownButton>
     </div>
-
-
-    
-
-
-
       <div className="app-text">
         <h3>
           {currentText}
