@@ -10,11 +10,12 @@
   margin: 50px auto auto;
   border-radius: 40px;
   padding: 15px;
-  background-color: rgb(75, 152, 239);
+  background-color: #0d6efd;
   color: aliceblue;
-  font-weight: 700;
+  font-weight: 500;
   font-size: large;
   cursor: pointer;
+  border-color: white;
 }
 
 .dropdown-menu{
@@ -29,4 +30,23 @@
 .heading{
   margin-top: 20px;
   text-align: center;
+}
+
+.text-box{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.text-box-area{
+  border-radius: 10px;
+}
+
+.add-text-button{
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+
+.ending-space{
+  height: 100px;
 }
