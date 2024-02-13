@@ -28,7 +28,6 @@ function App() {
     });
   },[])
 
-  // const API_KEY="AIzaSyB7qw1f805UDuVUVlyjz3gx0oRFB_OoQtU";
   const API_KEY = process.env.REACT_APP_API_KEY;
 
 
