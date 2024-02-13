@@ -28,7 +28,9 @@ function App() {
     });
   },[])
 
-  const API_KEY="AIzaSyB7qw1f805UDuVUVlyjz3gx0oRFB_OoQtU";
+  // const API_KEY="AIzaSyB7qw1f805UDuVUVlyjz3gx0oRFB_OoQtU";
+  const API_KEY = process.env.REACT_APP_API_KEY;
+
 
   const text="We choose to call ourselves as Usability Enthusiast (some people just refer us as “crazy”, but hey, who cares about “log-baag”). We are calling our this movement as “Only Usable”. We are still working on defining our online identity and legal entities. So, don't be surprised if you don’t find anything about us on net yet except this website. Remember this startup is currently in stealth mode and you are going to be part of its identity. So, lets join hands and build it together!!";
   const textboxref=useRef(null);
